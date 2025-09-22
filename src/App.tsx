@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Github, Linkedin, ExternalLink, Download, MapPin, Video } from 'lucide-react';
+// Importe a imagem para que o Vite faça o bundle corretamente em produção
+import erikPic from './assets/erik.jpg';
 
 const App = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -11,7 +13,9 @@ const App = () => {
   const handleDownload = async () => {
     try {
       setIsDownloading(true);
-      const res = await fetch('/static/erik-cv.pdf');
+      // Arquivos dentro de "public/" são servidos na raiz em produção: "/erik-cv.pdf"
+      const cvPath = `${import.meta.env.BASE_URL}erik-cv.pdf`;
+      const res = await fetch(cvPath);
       if (!res.ok) throw new Error('Download falhou');
       const blob = await res.blob();
       const url = window.URL.createObjectURL(blob);
@@ -24,7 +28,8 @@ const App = () => {
       window.URL.revokeObjectURL(url);
     } catch (err) {
       // fallback simples: abrir em nova aba
-      window.open('/public/erik-cv.pdf', '_blank', 'noopener');
+      const cvPath = `${import.meta.env.BASE_URL}erik-cv.pdf`;
+      window.open(cvPath, '_blank', 'noopener');
     } finally {
       setIsDownloading(false);
     }
@@ -80,7 +85,7 @@ const App = () => {
                 <div className="w-80 h-80 bg-gradient-to-br from-blue-800 to-green-800 rounded-full opacity-20 animate-pulse"></div>
                 <div className="absolute inset-0 w-80 h-80 bg-slate-800 rounded-full shadow-2xl flex items-center justify-center">
                   <img
-                    src="src/assets/erik.jpg"
+                    src={erikPic}
                     alt="Foto de Erik Medeiros"
                     className="w-78 h-78 rounded-full object-cover border-4 border-gray-700 shadow-lg"
                   />
