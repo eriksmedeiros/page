@@ -24,7 +24,7 @@ const App = () => {
       window.URL.revokeObjectURL(url);
     } catch (err) {
       // fallback simples: abrir em nova aba
-      window.open('/static/erik-cv.pdf', '_blank', 'noopener');
+      window.open('/public/erik-cv.pdf', '_blank', 'noopener');
     } finally {
       setIsDownloading(false);
     }
@@ -80,7 +80,7 @@ const App = () => {
                 <div className="w-80 h-80 bg-gradient-to-br from-blue-800 to-green-800 rounded-full opacity-20 animate-pulse"></div>
                 <div className="absolute inset-0 w-80 h-80 bg-slate-800 rounded-full shadow-2xl flex items-center justify-center">
                   <img
-                    src="/static/erik.jpg"
+                    src="src/assets/erik.jpg"
                     alt="Foto de Erik Medeiros"
                     className="w-78 h-78 rounded-full object-cover border-4 border-gray-700 shadow-lg"
                   />
