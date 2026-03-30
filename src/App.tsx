@@ -173,16 +173,16 @@ const App = () => {
                 <div className="text-white text-6xl">📱</div>
               </div>
               <div className="flex flex-col flex-1 p-6">
-                <h3 className="text-xl font-semibold text-slate-100 mb-2">Gerenciador de Tarefas</h3>
-                <p className="text-slate-300 mb-4">Aplicativo de gerenciamento de tarefas.</p>
+                <h3 className="text-xl font-semibold text-slate-100 mb-2">FlowTrack</h3>
+                <p className="text-slate-300 mb-4">Sistema de gerenciamento de Trabalhos.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-slate-700 text-green-200 text-sm rounded-full">Spring</span>
-                  <span className="px-3 py-1 bg-slate-700 text-red-200 text-sm rounded-full">Angular</span>
-                  <span className="px-3 py-1 bg-slate-700 text-purple-200 text-sm rounded-full">Bootstrap</span>
+                  <span className="px-3 py-1 bg-slate-700 text-red-200 text-sm rounded-full">NextJS</span>
+                  <span className="px-3 py-1 bg-slate-700 text-purple-200 text-sm rounded-full">Tailwind</span>
                 </div>
                 <div className="flex gap-4 mt-auto">
                   <a
-                    href="https://github.com/eriksmedeiros/api-todo.git"
+                    href="https://github.com/EduardoKaio/flowtrack.git"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-blue-300 hover:text-blue-200"
